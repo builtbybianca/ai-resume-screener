@@ -1,11 +1,12 @@
 # AI Resume Screener
 
-A Python tool that screens and scores resumes against a job description using the Claude API.
-Designed, built, and piloted in a live HR environment at a global cybersecurity software company.
+A Python tool that screens and scores resumes against a job description using the Claude
+API. Designed, built, and piloted in a live HR environment at a global cybersecurity
+software company.
 
 ## What It Does
 
-1. Takes a job description + a folder of resumes (PDF or text)
+1. Takes a job description plus a folder of resumes (PDF or text)
 2. Sends each resume to Claude with a structured scoring rubric
 3. Returns a ranked scorecard: overall score, per-criterion breakdown, and a
    plain-language rationale for every score
@@ -17,15 +18,15 @@ an identical resume under different names and fails if the scores diverge.
 ## Why It's Built This Way
 
 **Scoring rubrics, not vibes.** The prompt forces Claude to score against explicit,
-job-relevant criteria with stated reasoning — making every decision reviewable.
+job-relevant criteria with stated reasoning, so every decision is reviewable.
 
-**Human-in-the-loop by design.** The tool ranks and explains; humans decide.
-No resume is rejected by the system. This was a deliberate governance choice made
-with HR leadership and legal review in mind.
+**Human-in-the-loop by design.** The tool ranks and explains; humans decide. No resume
+is rejected by the system. That was a deliberate governance choice made with HR
+leadership and legal review in mind.
 
-**Bias guardrails in the prompt.** The scoring prompt explicitly instructs the model
-to ignore name, address, school prestige, and employment gaps, and to score only
-against the stated criteria.
+**Bias guardrails in the prompt.** The scoring prompt explicitly instructs the model to
+ignore name, address, school prestige, and employment gaps, and to score only against
+the stated criteria.
 
 ## Architecture
 
@@ -48,9 +49,9 @@ flowchart LR
 
 ## Scope
 
-This tool scores **fit** — how well a candidate matches the role. It does not verify
-the truthfulness of a resume's claims, and it does not screen identity documents. Those
-are deliberately kept as separate tools.
+This tool scores fit: how well a candidate matches the role. It does not verify the
+truthfulness of a resume's claims, and it does not screen identity documents. Those are
+deliberately kept as separate tools.
 
 ## Status
 
