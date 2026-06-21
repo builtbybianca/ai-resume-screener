@@ -28,3 +28,26 @@ to ignore name, address, school prestige, and employment gaps, and to score only
 against the stated criteria.
 
 ## Architecture
+
+Job Description ──┐
+├──► Prompt Builder ──► Claude API ──► JSON Scorecard ──► Ranked CSV Report
+Resume Files ─────┘
+
+## Setup
+
+1. Clone or download this repo
+2. Install dependencies: `pip install -r requirements.txt`
+3. Copy `.env.example` to `.env` and add your Anthropic API key
+4. Drop resumes in `data/resumes/` and your job description in `data/job_description.txt`
+5. Run: `python src/screener.py`
+
+## Scope
+
+This tool scores **fit** — how well a candidate matches the role. It does not verify
+the truthfulness of a resume's claims, and it does not screen identity documents. Those
+are deliberately kept as separate tools.
+
+## Status
+
+Piloted in a production HR environment. This public version uses synthetic example data;
+no candidate information from the pilot is included in this repository.
