@@ -29,9 +29,14 @@ against the stated criteria.
 
 ## Architecture
 
-Job Description ──┐
-├──► Prompt Builder ──► Claude API ──► JSON Scorecard ──► Ranked CSV Report
-Resume Files ─────┘
+```mermaid
+flowchart LR
+    JD[Job Description] --> PB[Prompt Builder]
+    RF[Resume Files] --> PB
+    PB --> API[Claude API]
+    API --> SC[JSON Scorecard]
+    SC --> REP[Ranked CSV Report]
+```
 
 ## Setup
 
